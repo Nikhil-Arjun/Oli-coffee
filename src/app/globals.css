@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-fraunces), var(--font-noto-devanagari), "Noto Serif Devanagari", Georgia, serif;
+  --font-sans: var(--font-inter), var(--font-noto-devanagari), system-ui, sans-serif;
+
+  /* Oli Coffee — Core Palette */
+  --color-cream-50: #faf6ee;
+  --color-cream-100: #f5efe3;
+  --color-cream-200: #ede4d3;
+  --color-cream-300: #e4dacb;
+  --color-cream-400: #d4c8b5;
+
+  --color-laterite-400: #c4634a;
+  --color-laterite-500: #a6452f;
+  --color-laterite-600: #8c3724;
+  --color-laterite-700: #712c1b;
+
+  --color-monsoon-700: #1f3d33;
+  --color-monsoon-800: #162d25;
+  --color-monsoon-900: #0f1f19;
+
+  --color-charcoal: #1e1e1e;
+  --color-muted: #6b6259;
+  --color-muted-light: #9a9188;
+
+  --color-success: #2e7d4f;
+  --color-amber: #c2870e;
+}
+
+:root {
+  --background: #f5efe3;
+  --foreground: #1e1e1e;
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #ede4d3; }
+::-webkit-scrollbar-thumb { background: #d4c8b5; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #a6452f; }
+
+/* ─── No-scrollbar utility ─── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ─── Glassmorphism ─── */
+.glass-nav {
+  background: rgba(245, 239, 227, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glass-card {
+  background: rgba(245, 239, 227, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-dark {
+  background: rgba(31, 61, 51, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
