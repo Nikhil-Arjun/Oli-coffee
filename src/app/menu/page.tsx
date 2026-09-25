@@ -174,7 +174,7 @@ export default function MenuPage() {
           <div className="flex items-center gap-2 min-w-max">
             <button
               onClick={() => setActiveCategory("All")}
-              className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all ${
+                className={`min-h-12 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all ${
                 activeCategory === "All"
                   ? "bg-[#1F3D33] text-[#F5EFE3] shadow-sm"
                   : "bg-white/60 text-[#1E1E1E] hover:bg-white border border-[#E4DACB]"
@@ -188,7 +188,7 @@ export default function MenuPage() {
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap ${
+                    className={`min-h-12 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap ${
                     activeCategory === category
                       ? "bg-[#1F3D33] text-[#F5EFE3] shadow-sm"
                       : "bg-white/60 text-[#1E1E1E] hover:bg-white border border-[#E4DACB]"

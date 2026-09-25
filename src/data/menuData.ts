@@ -342,6 +342,9 @@ export const MENU_ITEMS: MenuItem[] = [
   },
 ];
 
+export const SIGNATURE_DRINK = MENU_ITEMS.find((item) => item.id === "coffee-6")!;
+export const SIGNATURE_COOLER = MENU_ITEMS.find((item) => item.id === "cooler-1")!;
+
 export const CATEGORIES = [
   "Seasonal",
   "Coffee",

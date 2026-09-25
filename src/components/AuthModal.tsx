@@ -70,7 +70,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                 Welcome to Oli Coffee
               </h3>
               <p className="text-sm text-[#756A63] mt-1">
-                Your coastal coffee sanctuary awaits
+                Your coastal coffee table awaits
               </p>
             </div>
 
@@ -202,7 +202,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                     <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                   ) : (
                     <>
-                      <span>{activeTab === "signin" ? "Sign In to Sanctuary" : "Create My Account"}</span>
+                      <span>{activeTab === "signin" ? "Sign In to Oli Coffee" : "Create My Account"}</span>
                       <ArrowRight className="w-4 h-4" />
                     </>
                   )}

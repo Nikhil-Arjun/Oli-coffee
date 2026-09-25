@@ -4,13 +4,9 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Coffee, Menu, X, ArrowUpRight, User } from "lucide-react";
+import { Coffee, Menu, X, ArrowUpRight } from "lucide-react";
 
-interface NavbarProps {
-  onOpenAuth?: () => void;
-}
-
-export default function Navbar({ onOpenAuth }: NavbarProps) {
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -24,10 +20,9 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "/" },
     { name: "Menu", href: "/menu" },
     { name: "About", href: "/about" },
-    { name: "Visit & Hours", href: "/visit" },
+    { name: "Visit", href: "/visit" },
   ];
 
   return (
@@ -77,52 +72,17 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
 
           {/* Right Action Buttons */}
           <div className="hidden sm:flex items-center gap-3">
-            {onOpenAuth ? (
-              <button
-                onClick={onOpenAuth}
-                className="text-xs uppercase tracking-widest font-semibold text-[#1E1E1E] hover:text-[#A6452F] transition-colors px-3 py-2 flex items-center gap-1.5 cursor-pointer"
-              >
-                <User className="w-4 h-4 text-[#A6452F]" />
-                <span>Sign In</span>
-              </button>
-            ) : (
-              <Link
-                href="/login"
-                className="text-xs uppercase tracking-widest font-semibold text-[#1E1E1E] hover:text-[#A6452F] transition-colors px-3 py-2 flex items-center gap-1.5"
-              >
-                <User className="w-4 h-4 text-[#A6452F]" />
-                <span>Sign In</span>
-              </Link>
-            )}
-
             <Link
               href="/menu"
               className="px-5 py-2.5 rounded-full bg-[#A6452F] hover:bg-[#8C3724] text-white text-xs uppercase tracking-widest font-semibold transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 flex items-center gap-1.5"
             >
-              <span>Order Now</span>
+              <span>Order</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
-            {onOpenAuth ? (
-              <button
-                onClick={onOpenAuth}
-                className="p-2 text-[#1E1E1E] hover:text-[#A6452F]"
-                aria-label="Sign In"
-              >
-                <User className="w-5 h-5" />
-              </button>
-            ) : (
-              <Link
-                href="/login"
-                className="p-2 text-[#1E1E1E] hover:text-[#A6452F]"
-                aria-label="Sign In"
-              >
-                <User className="w-5 h-5" />
-              </Link>
-            )}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-[#1E1E1E] hover:bg-[#E4DACB]/50 transition-colors"

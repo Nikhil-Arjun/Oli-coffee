@@ -43,7 +43,7 @@ export default function MonsoonBanner({ onOpenAuth }: MonsoonBannerProps) {
           </h2>
 
           <p className="text-base sm:text-xl text-white/90 max-w-2xl font-light leading-relaxed mb-8">
-            Warm sips and coastal comfort bites thoughtfully crafted for rainy days, misty windows,
+            Warm sips and coastal comfort bites made for rainy days, misty windows,
             and unhurried afternoon drizzles.
           </p>
 

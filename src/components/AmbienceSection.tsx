@@ -3,9 +3,13 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Calendar, Check } from "lucide-react";
+import { useState } from "react";
 import { AMBIENCE_SPACES } from "@/data/cafeData";
 
 export default function AmbienceSection() {
+  const [reserved, setReserved] = useState(false);
+
   return (
     <section id="spaces" className="py-20 md:py-28 bg-[#FAF7F2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,11 +22,10 @@ export default function AmbienceSection() {
             </span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#1E1A17] tracking-tight">
-            Sanctuary of Spaces
+            Spaces for Every Weather
           </h2>
           <p className="text-sm sm:text-base text-[#6B5E55] mt-3">
-            Every architectural corner reflects the raw beauty of coastal Konkan living — terracotta textures,
-            soothing rain acoustics, and warm hospitality.
+            Cane chairs, rain-muted windows, and a brass brew bar shape three distinct ways to spend an afternoon.
           </p>
         </div>
 
@@ -58,7 +61,7 @@ export default function AmbienceSection() {
 
               {/* Content */}
               <div className="relative z-10 flex flex-col">
-                <h3 className="font-serif text-2xl sm:text-3xl text-white font-medium mb-2 group-hover:text-[#F2BA59] transition-colors">
+                <h3 className="font-serif text-2xl sm:text-3xl text-white font-medium mb-2 group-hover:text-[#F0B84A] transition-colors">
                   {space.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-[#DDD4C5] leading-relaxed line-clamp-3">
@@ -67,6 +70,16 @@ export default function AmbienceSection() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="flex justify-center mt-10">
+          <button
+            onClick={() => setReserved((current) => !current)}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#1E1A17] hover:bg-[#384936] text-white text-xs uppercase tracking-wider font-semibold transition-colors"
+          >
+            {reserved ? <Check className="w-4 h-4" /> : <Calendar className="w-4 h-4" />}
+            <span>{reserved ? "Rainy Corner Reserved" : "Reserve a Rainy Corner"}</span>
+          </button>
         </div>
       </div>
     </section>

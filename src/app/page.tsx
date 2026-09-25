@@ -25,13 +25,13 @@ export default function HomePage() {
       <MonsoonLoader />
 
       {/* Sticky Header */}
-      <Navbar onOpenAuth={() => setAuthModalOpen(true)} />
+      <Navbar />
 
       {/* Main Content */}
       <main className="flex-1">
         <Hero onOpenAuth={() => setAuthModalOpen(true)} />
         <FeatureStrip />
-        <MenuSection onOpenAuth={() => setAuthModalOpen(true)} />
+        <MenuSection />
         <HeritageSection />
         <MonsoonBanner onOpenAuth={() => setAuthModalOpen(true)} />
         <AmbienceSection />

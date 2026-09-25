@@ -3,6 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { Coffee, MapPin, Phone, Mail, Star } from "lucide-react";
+import { SIGNATURE_DRINK, SIGNATURE_COOLER } from "@/data/menuData";
+import { CAFE_LINKS } from "@/data/siteConfig";
 
 export default function Footer() {
   return (
@@ -39,7 +41,7 @@ export default function Footer() {
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#A6452F] shrink-0" />
-                <span>+91 98200 12345 (Tue–Sun, 8 AM – 10 PM)</span>
+                <a href={CAFE_LINKS.phone}>[PHONE] (Tue–Sun, 8 AM – 10 PM)</a>
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#A6452F] shrink-0" />
@@ -76,7 +78,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/login" className="hover:text-[#A6452F] transition-colors">
-                  Member Club Sign In
+                  Sign In
                 </Link>
               </li>
             </ul>
@@ -90,7 +92,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link href="/menu" className="hover:text-[#A6452F] transition-colors">
-                  Kokum Citrus Cold Brew
+                  {SIGNATURE_DRINK.name}
                 </Link>
               </li>
               <li>
@@ -100,7 +102,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/menu" className="hover:text-[#A6452F] transition-colors">
-                  Sol Kadhi Spritz
+                  {SIGNATURE_COOLER.name}
                 </Link>
               </li>
               <li>
@@ -129,7 +131,7 @@ export default function Footer() {
               <p className="text-[#A6452F] font-semibold pt-1">Mon: Closed</p>
             </div>
             <a
-              href="https://instagram.com"
+              href={CAFE_LINKS.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs text-[#A6452F] font-semibold hover:underline"

@@ -20,7 +20,7 @@ export default function MonsoonLoader({ onComplete, forceShow = false }: Monsoon
     { en: "Rainfall on laterite earth", mr: "पावसाची चाहूल व तांबडी माती" },
     { en: "Shade-grown beans from the Ghats", mr: "घाटमाथ्याची सावलीतील कॉफी" },
     { en: "Slow coastal drip steeping", mr: "हळुवार सुगंधी फिल्टर कापी" },
-    { en: "Welcome to Oli Sanctuary", mr: "ओली कॉफीमध्ये आपले स्वागत" },
+    { en: "Welcome to Oli Coffee", mr: "ओली कॉफीमध्ये आपले स्वागत" },
   ];
 
   useEffect(() => {
@@ -344,7 +344,7 @@ export default function MonsoonLoader({ onComplete, forceShow = false }: Monsoon
           {/* ─── Bottom Ambient Tag ─── */}
           <div className="absolute bottom-6 left-0 right-0 flex items-center justify-center gap-2 text-[10px] tracking-widest uppercase text-[#73685F] pointer-events-none">
             <Sparkles className="w-3 h-3 text-[#A6452F]" />
-            <span>Between Red Earth & Blue Water</span>
+            <span>Rain on Rajarampuri windows</span>
           </div>
         </motion.div>
       )}

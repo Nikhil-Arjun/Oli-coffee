@@ -1,17 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { MapPin, Clock, Phone, Navigation, Calendar, Check } from "lucide-react";
+import { MapPin, Clock, Phone, Navigation } from "lucide-react";
+import { CAFE_LINKS } from "@/data/siteConfig";
 
 export default function LocationSection() {
-  const [reserved, setReserved] = useState(false);
-
-  const handleReserve = () => {
-    setReserved(true);
-    setTimeout(() => setReserved(false), 2500);
-  };
-
   return (
     <section id="location" className="py-20 md:py-24 bg-[#1E1A17] text-[#FAF7F2] relative overflow-hidden">
       {/* Decorative ambient gradients */}
@@ -79,7 +73,7 @@ export default function LocationSection() {
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3">
               <a
-                href="https://maps.google.com"
+                href={CAFE_LINKS.googleMaps}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 rounded-full bg-[#C25934] hover:bg-[#A64421] text-white text-xs uppercase tracking-wider font-semibold shadow-md transition-all flex items-center gap-2"
@@ -88,25 +82,8 @@ export default function LocationSection() {
                 <span>Get Directions</span>
               </a>
 
-              <button
-                onClick={handleReserve}
-                className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs uppercase tracking-wider font-semibold transition-all flex items-center gap-2 cursor-pointer"
-              >
-                {reserved ? (
-                  <>
-                    <Check className="w-4 h-4 text-emerald-400" />
-                    <span>Corner Reserved!</span>
-                  </>
-                ) : (
-                  <>
-                    <Calendar className="w-4 h-4" />
-                    <span>Reserve a Table</span>
-                  </>
-                )}
-              </button>
-
               <a
-                href="tel:+919820012345"
+                href={CAFE_LINKS.phone}
                 className="px-5 py-3 rounded-full bg-transparent hover:bg-white/5 text-[#DDD4C5] border border-white/10 text-xs uppercase tracking-wider font-medium transition-all flex items-center gap-2"
               >
                 <Phone className="w-3.5 h-3.5" />

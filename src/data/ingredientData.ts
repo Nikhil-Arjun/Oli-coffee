@@ -20,7 +20,7 @@ export const KONKAN_INGREDIENTS: KonkanIngredient[] = [
     id: "ing-2",
     name: "Kolhapur Organic Jaggery (गूळ)",
     origin: "Cane farms across the Panchganga river basin",
-    useCase: "Sweetens espresso lattes, spiced kadha, and artisanal brownies.",
+    useCase: "Sweetens espresso lattes, spiced kadha, and jaggery brownies.",
     description: "Unrefined, naturally mineral-rich sugarcane golden blocks with rich caramel and smoky notes.",
     image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80",
   },

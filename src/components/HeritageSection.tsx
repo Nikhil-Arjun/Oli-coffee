@@ -52,8 +52,7 @@ export default function HeritageSection() {
             </div>
 
             <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#1E1A17] tracking-tight leading-[1.15] mb-6">
-              Between red earth <br />
-              <span className="italic font-light text-[#C25934]">and blue water</span>
+              Between Red Earth & Blue Water
             </h2>
 
             <p className="text-base text-[#6B5E55] leading-relaxed mb-5">

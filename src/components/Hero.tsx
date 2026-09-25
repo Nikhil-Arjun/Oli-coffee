@@ -3,7 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Star, ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
+import { SIGNATURE_DRINK } from "@/data/menuData";
+import { CAFE_LINKS, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/data/siteConfig";
 
 interface HeroProps {
   onOpenAuth: () => void;
@@ -35,44 +37,39 @@ export default function Hero({ onOpenAuth }: HeroProps) {
             {/* Main Headline */}
             <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal text-[#1E1A17] tracking-tight leading-[1.08] mb-6">
               Konkan Flavours, <br />
-              <span className="italic font-light text-[#C25934]">Thoughtfully</span> Brewed
+              <span className="italic font-light text-[#C25934]">{SIGNATURE_DRINK.name}</span>
             </h1>
 
             {/* Subparagraph */}
             <p className="text-base sm:text-lg text-[#6B5E55] max-w-xl font-normal leading-relaxed mb-8">
-              Authentic coastal coffee infusions, artisanal single-origin roasts, and regional
-              comfort delights served in an earthy, rain-kissed coastal sanctuary.
+              An 18-hour cold brew steeped with kokum and orange zest, plus coffee and bakes made
+              daily on Rajarampuri 5th Lane.
             </p>
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 mb-10">
               <a
-                href="#menu"
+                href={CAFE_LINKS.googleMaps}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-7 py-3.5 rounded-full bg-[#C25934] hover:bg-[#A64421] text-white text-xs sm:text-sm uppercase tracking-wider font-semibold shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2 group"
               >
-                <span>Explore Menu</span>
+                <span>Get Directions</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
 
               <a
-                href="#story"
-                className="px-7 py-3.5 rounded-full bg-transparent hover:bg-[#EFE7DC] text-[#2A231E] border border-[#DDD3C5] text-xs sm:text-sm uppercase tracking-wider font-semibold transition-all duration-300 flex items-center gap-2"
+                href="#menu"
+                className="text-sm font-semibold text-[#712C1B] underline underline-offset-4 hover:text-[#4F2115] transition-colors"
               >
-                <span>Our Story</span>
+                <span>View Menu</span>
               </a>
             </div>
 
             {/* Social Proof / Rating */}
-            <div className="pt-6 border-t border-[#E8E0D2] w-full max-w-lg flex flex-col sm:flex-row sm:items-center gap-3">
-              <div className="flex items-center gap-1 text-[#D89B37]">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
-                ))}
-                <span className="text-sm font-bold text-[#1E1A17] ml-1.5">4.9 / 5</span>
-              </div>
-              <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-[#D4C8B8]" />
+            <div className="pt-6 border-t border-[#E8E0D2] w-full max-w-lg">
               <p className="text-xs text-[#5C5047]">
-                Loved by coffee drinkers across Kolhapur, Pune & Goa
+                <span className="font-bold text-[#1E1A17]">{GOOGLE_RATING} ★</span> · {GOOGLE_REVIEW_COUNT} Google reviews
               </p>
             </div>
           </motion.div>

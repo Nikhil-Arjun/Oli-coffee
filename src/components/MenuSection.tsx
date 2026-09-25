@@ -4,22 +4,16 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, ArrowRight, Check } from "lucide-react";
-import { MENU_ITEMS } from "@/data/cafeData";
+import Link from "next/link";
+import { CATEGORIES, MENU_ITEMS } from "@/data/menuData";
 
-interface MenuSectionProps {
-  onOpenAuth: () => void;
-}
-
-export default function MenuSection({ onOpenAuth }: MenuSectionProps) {
+export default function MenuSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [addedItem, setAddedItem] = useState<string | null>(null);
 
   const categories = [
     { id: "all", label: "All Offerings" },
-    { id: "cold-brew", label: "Cold Brews" },
-    { id: "specialty", label: "Specialty Espresso" },
-    { id: "traditional", label: "Coastal Kaapi" },
-    { id: "bakes", label: "Artisanal Bakes" },
+    ...CATEGORIES.map((category) => ({ id: category, label: category })),
   ];
 
   const filteredItems =
@@ -42,8 +36,8 @@ export default function MenuSection({ onOpenAuth }: MenuSectionProps) {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C25934]" />
-              <span className="text-xs uppercase tracking-widest font-bold text-[#C25934]">
-                Curated Daily Selections
+              <span className="text-xs uppercase tracking-widest font-bold text-[#8C3724]">
+                Daily Selections
               </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#1E1A17] tracking-tight">
@@ -52,18 +46,18 @@ export default function MenuSection({ onOpenAuth }: MenuSectionProps) {
             </h2>
             <p className="text-sm sm:text-base text-[#6B5E55] mt-3 max-w-xl">
               Handcrafted coffee creations paired with authentic regional culinary accompaniments,
-              celebrating native terroir and coastal harvest.
+              with kokum, jaggery, brass dabara coffee, and seasonal produce from Rajarampuri.
             </p>
           </div>
 
           <div className="flex items-center gap-4">
-            <button
-              onClick={onOpenAuth}
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-[#C25934] hover:text-[#A64421] transition-colors group"
+            <Link
+              href="/menu"
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-[#8C3724] hover:text-[#712C1B] transition-colors group"
             >
-              <span>View Full Menu & Pricing</span>
+              <span>See Full Menu</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -73,7 +67,7 @@ export default function MenuSection({ onOpenAuth }: MenuSectionProps) {
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`relative px-5 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-300 cursor-pointer ${
+                className={`relative min-h-12 px-5 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-300 cursor-pointer ${
                 selectedCategory === cat.id
                   ? "text-white bg-[#1E1A17] shadow-sm"
                   : "text-[#6B5E55] bg-[#F4EFE6] hover:bg-[#EAE2D3] hover:text-[#1E1A17]"
@@ -110,16 +104,16 @@ export default function MenuSection({ onOpenAuth }: MenuSectionProps) {
                 {/* Image Container */}
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F4EFE6]">
                   <Image
-                    src={item.image}
+                    src={item.image ?? "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"}
                     alt={item.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                     className="object-cover group-hover:scale-108 transition-transform duration-500"
                   />
                   {/* Tag Pill */}
-                  {item.tag && (
+                  {item.tags?.[0] && (
                     <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-[#1E1A17]/80 backdrop-blur-md text-[10px] uppercase font-bold tracking-wider text-[#FAF7F2] border border-white/20">
-                      {item.tag}
+                      {item.tags[0]}
                     </span>
                   )}
                 </div>

@@ -11,7 +11,7 @@ export default function VisitPage() {
 
   return (
     <div className="min-h-screen bg-[#F5EFE3]">
-      <Navbar onOpenAuth={() => setAuthModalOpen(true)} />
+      <Navbar />
       <main className="pt-20">
         <LocationSection />
       </main>

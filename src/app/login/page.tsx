@@ -42,9 +42,9 @@ export default function LoginPage() {
       {/* Left Column: Atmospheric Brand Visual (Desktop) */}
       <div className="hidden lg:relative lg:col-span-6 lg:flex flex-col justify-between p-12 bg-[#1E1A17] text-white overflow-hidden">
         {/* Background Image with Rain Window Cafe Glow */}
-        <Image
-          src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1400&q=85"
-          alt="Oli Coffee sanctuary interior"
+                <Image
+                  src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=85"
+                  alt="Oli Coffee interior"
           fill
           priority
           sizes="50vw"
@@ -65,7 +65,7 @@ export default function LoginPage() {
                 Oli Coffee
               </span>
               <span className="text-[10px] uppercase tracking-widest text-[#D4C8B8] font-medium">
-                Artisanal Roasters
+                Coastal Roasters
               </span>
             </div>
           </Link>
@@ -80,12 +80,12 @@ export default function LoginPage() {
           >
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs text-[#E29272] uppercase tracking-widest font-bold mb-6">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Sanctuary Portal</span>
+              <span>Member Portal</span>
             </div>
 
             <h2 className="font-serif text-4xl sm:text-5xl font-normal leading-tight text-white mb-6">
               Konkan Flavours, <br />
-              <span className="italic text-[#E29272]">Thoughtfully</span> Brewed.
+              <span className="italic text-[#E29272]">Carefully</span> Brewed.
             </h2>
 
             <p className="text-base text-[#D4C8B8] leading-relaxed mb-8">
@@ -121,7 +121,7 @@ export default function LoginPage() {
             className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-bold text-[#756A63] hover:text-[#C25934] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Back to Sanctuary</span>
+            <span>Back to Oli Coffee</span>
           </Link>
         </div>
 
@@ -301,7 +301,7 @@ export default function LoginPage() {
                     onChange={(e) => setRememberMe(e.target.checked)}
                     className="rounded border-[#DDD4C5] text-[#C25934] focus:ring-[#C25934]"
                   />
-                  <span className="text-xs text-[#756A63]">Remember this sanctuary</span>
+                  <span className="text-xs text-[#756A63]">Remember this device</span>
                 </label>
               </div>
 
@@ -317,7 +317,7 @@ export default function LoginPage() {
                   <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 ) : (
                   <>
-                    <span>{mode === "signin" ? "Sign In to Sanctuary" : "Complete Registration"}</span>
+                    <span>{mode === "signin" ? "Sign In to Oli Coffee" : "Complete Registration"}</span>
                     <ArrowRight className="w-4 h-4" />
                   </>
                 )}

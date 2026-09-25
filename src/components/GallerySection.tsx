@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Heart, ArrowUpRight } from "lucide-react";
 import { GALLERY_PHOTOS } from "@/data/cafeData";
+import { CAFE_LINKS } from "@/data/siteConfig";
 
 export default function GallerySection() {
   return (
@@ -25,7 +26,7 @@ export default function GallerySection() {
           </div>
 
           <a
-            href="https://instagram.com"
+            href={CAFE_LINKS.instagram}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-[#1E1A17] hover:text-[#C25934] transition-colors group"

@@ -28,7 +28,7 @@ export const FOUNDER_DATA: FounderInfo = {
   quote:
     "“Oli means that soft, rain-soaked feeling in Marathi. We wanted a café that honors our Konkan soil, seasonal rainfall, and slow conversations.”",
   story:
-    "Raised between the lush spice groves of Sawantwadi and the historic lanes of Kolhapur, Tanvi spent a decade working in specialty coffee before returning to craft an everyday sanctuary in Rajarampuri.",
+    "Raised between the lush spice groves of Sawantwadi and the historic lanes of Kolhapur, Tanvi spent a decade working in specialty coffee before returning to build an everyday coffee bar in Rajarampuri.",
 };
 
 export const TEAM_MEMBERS: TeamMember[] = [
@@ -59,7 +59,7 @@ export const CAFE_VALUES: CafeValue[] = [
   {
     id: "val-1",
     title: "Local First",
-    description: "Every bean, coconut, block of jaggery, and basket of cashew is sourced directly from smallholder farms in Maharashtra & Goa.",
+    description: "Every bean, coconut, block of jaggery, and basket of cashew is sourced directly from smallholder farms in Maharashtra and the Konkan.",
     icon: "Wheat",
   },
   {
