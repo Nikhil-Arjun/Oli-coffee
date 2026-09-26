@@ -13,7 +13,6 @@ interface MonsoonLoaderProps {
 
 export default function MonsoonLoader({ onComplete, forceShow = false }: MonsoonLoaderProps) {
   const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
   const [phaseIndex, setPhaseIndex] = useState(0);
 
   const poeticPhases = [
@@ -28,9 +27,11 @@ export default function MonsoonLoader({ onComplete, forceShow = false }: Monsoon
     if (!forceShow && typeof window !== "undefined" && process.env.NODE_ENV === "production") {
       const hasSeen = sessionStorage.getItem("oli_monsoon_loader_seen");
       if (hasSeen === "true") {
-        setLoading(false);
-        onComplete?.();
-        return;
+        const skipTimer = window.setTimeout(() => {
+          setLoading(false);
+          onComplete?.();
+        }, 0);
+        return () => window.clearTimeout(skipTimer);
       }
     }
 
@@ -44,7 +45,6 @@ export default function MonsoonLoader({ onComplete, forceShow = false }: Monsoon
     const timer = setInterval(() => {
       const elapsed = Date.now() - startTime;
       const pct = Math.min(100, Math.floor((elapsed / duration) * 100));
-      setProgress(pct);
 
       if (pct < 25) setPhaseIndex(0);
       else if (pct < 55) setPhaseIndex(1);
@@ -331,7 +331,7 @@ export default function MonsoonLoader({ onComplete, forceShow = false }: Monsoon
                   className="flex flex-col items-center"
                 >
                   <span className="text-sm sm:text-base text-[#FAF7F2] font-serif tracking-wide text-center">
-                    "{poeticPhases[phaseIndex].en}"
+                    &quot;{poeticPhases[phaseIndex].en}&quot;
                   </span>
                   <span className="text-xs sm:text-sm text-[#E29272] font-serif tracking-wide mt-1 text-center font-normal">
                     {poeticPhases[phaseIndex].mr}
